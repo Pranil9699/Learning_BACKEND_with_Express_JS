@@ -1,0 +1,5 @@
+So The node js is not a programming lang,technology,framework,library,also not software
+Node js is the Run time environment (JS runtime environment )
+We could'nt build backend by js becasue JS doesn't having the functionality to create the backend.
+the one researcher which will thinking that we could build the backend by js by the using of google chrome v8 engine 's open source code to used that and modify something to create the backend by the js 
+after that think it will think we want to code in js because the V8 engine code will be in the C++ coded.
