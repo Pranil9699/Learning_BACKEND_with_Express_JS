@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <div class="main w-full min-h-screen bg-zinc-900 text-white">
+      <div class="form p-10 text-center">
+        <form action="/create" method="post" class="">
+          <input
+            class="block mx-auto w-[70%] rounded-sm px-5 py-2 bg-zinc-800 outline-none"
+            type="text"
+            placeholder="Title goes here"
+            name="title"
+            required
+          />
+          <textarea
+            class="block mx-auto w-[70%] rounded-sm px-5 py-2 bg-zinc-800 resize-none outline-none mt-5"
+            name="content"
+            class=""
+            placeholder="Write content here"
+            required
+          ></textarea>
+          <input
+            type="submit"
+            value="Create Task"
+            class="mt-5 bg-blue-600 px-5 rounded-sm"
+          />
+        </form>
+      </div>
+      <% if(files.length > 0){ %>
+
+      <div class="tasks p-10 gap-3 flex flex-wrap">
+        <% files.forEach((file) => { %>
+        <div class="task mx-3 my-5 w-72 px-3 py-4 rounded-sm bg-zinc-700">
+          <h3 class="text-white text-3xl tracking-tighter">
+            <%= file.split(".")[0] %>
+          </h3>
+
+          <div class="flex  w-full mt-3 justify-between items-center " >
+            <a href="/file/<%= file %>" class="text-blue-500 inline-block"
+              >Read more.
+            </a>
+            <a href="/edit/<%= file %>" class="text-zinc-900 inline-block "
+              >Edit</a
+            >
+          </div>
+        </div>
+        <% }) %>
+      </div>
+      <% } else { %>
+
+      <div class="text-white-500 text-3xl text-center">
+        No Task Available Yet!
+      </div>
+      <% } %>
+    </div>
+  </body>
+</html>
